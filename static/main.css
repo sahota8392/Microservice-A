@@ -1,0 +1,36 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #000000;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 25px;
+}
+
+#content {
+    width: 70%;
+}
