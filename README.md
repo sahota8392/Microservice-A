@@ -15,7 +15,7 @@ $ source myenv/bin/activate
 $ python3 app.py
 
 5. See the program run on below address
-$ localhost:2345 
+$ localhost:5000 
 
 6. Update the localhost port if necessary in the 'app.py'
 $ app.run(debug=True, port=5000)
