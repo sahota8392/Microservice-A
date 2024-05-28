@@ -1,6 +1,6 @@
 #source1 : https://www.geeksforgeeks.org/build-blog-website-using-flask/
 
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -33,6 +33,13 @@ def index():
     else:
         goals = Todo.query.order_by(Todo.date_created).all()        #returns all in order by date (new to old)
         return render_template('index.html', goals=goals)           #render_template renders the index.html from templates folder
+
+# get goals function to work with the tkinter app
+@app.route('/api/goals', methods=['GET'])
+def get_goals():
+    goals = Todo.query.order_by(Todo.date_created).all()
+    goals_list = [{"id": goal.id, "content": goal.content, "date_created": goal.date_created.strftime("%Y-%m-%d %H:%M:%S")} for goal in goals]
+    return jsonify(goals_list)
 
 #DELETE 
 @app.route('/delete/<int:id>')                 #deletes based on the id - integer id
