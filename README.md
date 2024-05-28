@@ -30,6 +30,7 @@ This microservice is responsible for handling goals including adding, updating a
 4. To delete a goal no longer relevent or achieved, click 'Delete'
 
 UML Sequence Diagram
+
 ![alt text](image.png)
 
 
