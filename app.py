@@ -34,7 +34,7 @@ def index():
         goals = Todo.query.order_by(Todo.date_created).all()        #returns all in order by date (new to old)
         return render_template('index.html', goals=goals)           #render_template renders the index.html from templates folder
 
-# get goals function to work with the tkinter app
+# get goals function to work with the tkinter app added
 @app.route('/api/goals', methods=['GET'])
 def get_goals():
     goals = Todo.query.order_by(Todo.date_created).all()
